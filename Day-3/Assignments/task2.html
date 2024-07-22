@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+</head>
+
+<body>
+  <h3>Product Details</h3>
+  <label for="id">Id:</label>
+  <output id="id"></output><br>
+  <label for="name">Name:</label>
+  <output id="name"></output><br>
+  <label for="price">Price:</label>
+  <output id="price"></output><br>
+  <label for="description">Description:</label>
+  <output id="description"></output><br>
+  <label for="category">Category:</label>
+  <output id="category"></output><br>
+  <label for="ratings">Ratings:</label>
+  <output id="ratings"></output><br>
+  <label for="brand">Brand:</label>
+  <output id="brand"></output><br>
+  <label for="unit">Unit:</label>
+  <output id="unit"></output><br>
+  <label for="dis">Discount:</label>
+  <output id="dis"></output><br>
+
+
+  <script>
+    const URL = "https://fake-store-api.mock.beeceptor.com/api/products";
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL);
+        const data = await response.json();
+        const product = data[6];
+        document.getElementById("id").innerHTML = product.product_id;
+        document.getElementById("name").innerHTML = product.name;
+        document.getElementById("price").innerHTML = product.price;
+        document.getElementById("description").innerHTML = product.description;
+        document.getElementById("category").innerHTML = product.category;
+        document.getElementById("ratings").innerHTML = product.rating;
+        document.getElementById("brand").innerHTML = product.brand;
+        document.getElementById("unit").innerHTML = product.unit;
+        document.getElementById("dis").innerHTML = product.discount;
+
+      } catch (e) {
+        console.log("Error: ", e);
+      }
+    };
+
+    fetchData();
+
+  </script>
+</body>
+
+</html>

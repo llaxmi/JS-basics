@@ -3,9 +3,8 @@ const URL = "https://course-api.com/react-store-products";
 function fetchData(url, callBack) {
   fetch(url)
     .then((rsp) => rsp.json())
-    .then((data) =>
-      callBack(data).catch((e) => console.log("Error occured", e))
-    );
+    .then((data) => callBack(data))
+    .catch((e) => console.log("Error occured", e));
 }
 
 function handleData(data) {
