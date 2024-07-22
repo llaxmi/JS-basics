@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    BODY {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aliceblue;
+    }
+
+    input {
+      padding: 6px;
+    }
+
+    #btn {
+      max-width: fit-content;
+      padding: 8px;
+      border-radius: 8px;
+      border-width: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="form">
+    <div id="here" style="padding: 6px; gap: 4px;display: flex; flex-direction: column; max-width: fit-content; ">
+      <label for="color">Text-color:</label>
+      <input type="text" id="color"><br>
+      <label for="bg">Background-color:</label>
+      <input type="text" id="bg"><br>
+      <label for="content">Content:</label>
+      <textarea id="content" rows="4" cols="50"></textarea><br>
+      <input id="btn" type="submit" />
+  </form>
+
+  <div id="display" class="invisible">
+    <p id="textContent" style="text-align: center;"></p>
+  </div>
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const textClr = document.getElementById('color').value;
+      const BG = document.getElementById('bg').value;
+      const content = document.getElementById('content').value;
+
+      document.getElementById('textContent').textContent = content;
+      document.getElementById('textContent').style.color = textClr;
+      document.getElementById('display').style.backgroundColor = BG;
+    });
+  </script>
+</body>
+
+</html>

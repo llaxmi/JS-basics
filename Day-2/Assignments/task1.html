@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="m-5">DOM EVENTS</h1>
+  <p id="text">I will change my color according to your chocie.</p>
+  <input id="input" type="text" />
+  <button id="btn">Submit</button>
+</body>
+
+<script>
+  const button = document.getElementById("btn");
+  const text = document.getElementById("text");
+  const input = document.getElementById("input");
+
+  button.addEventListener("click", function () {
+    // if (input.value == "") {
+    //   alert("Please enter a color");
+    // }
+    text.style.color = input.value;
+  })
+</script>
+
+</html>
