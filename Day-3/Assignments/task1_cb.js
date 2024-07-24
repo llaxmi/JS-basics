@@ -4,6 +4,7 @@ const sumN = (arr) => {
   for (i = 0; i < arr.length; i++) {
     sum += naturalN[i];
   }
+  // const sum = naturalN.reduce((acc, curr) => acc + curr);
   console.log(sum);
 };
 
